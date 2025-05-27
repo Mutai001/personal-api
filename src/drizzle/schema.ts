@@ -60,7 +60,7 @@ export const projectsRelations = relations(projects, ({ one, many }) => ({
   projectTags: many(projectTags),
 }));
 
-// Blogs
+// Blogs table
 export const blogs = pgTable('blogs', {
   id: uuid('id').primaryKey().defaultRandom(),
   userId: uuid('user_id').references(() => users.id, { onDelete: 'cascade' }).notNull(),
