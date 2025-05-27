@@ -51,6 +51,7 @@ export const projects = pgTable('projects', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
+//Project relations 
 export const projectsRelations = relations(projects, ({ one, many }) => ({
   user: one(users, {
     fields: [projects.userId],
