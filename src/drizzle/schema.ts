@@ -74,6 +74,7 @@ export const blogs = pgTable('blogs', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
+//Blogs relations
 export const blogsRelations = relations(blogs, ({ one, many }) => ({
   user: one(users, {
     fields: [blogs.userId],
