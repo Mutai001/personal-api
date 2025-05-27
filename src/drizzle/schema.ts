@@ -99,6 +99,7 @@ export const blogTags = pgTable('blog_tags', {
   pk: primaryKey({ columns: [t.blogId, t.tagId] }),
 }));
 
+// Blog Tags relations
 export const blogTagsRelations = relations(blogTags, ({ one }) => ({
   blog: one(blogs, {
     fields: [blogTags.blogId],
